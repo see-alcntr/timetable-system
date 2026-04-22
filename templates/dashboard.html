@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timetable System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>📅 Student Timetable System</h1>
+
+<form method="POST">
+    <input name="subject" placeholder="Subject" required>
+    <input name="day" placeholder="Day" required>
+    <input name="time" placeholder="Time" required>
+    <button type="submit">Add</button>
+</form>
+
+<h2>Timetable</h2>
+
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Day</th>
+        <th>Time</th>
+    </tr>
+
+    {% for item in timetable %}
+    <tr>
+        <td>{{ item.subject }}</td>
+        <td>{{ item.day }}</td>
+        <td>{{ item.time }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
